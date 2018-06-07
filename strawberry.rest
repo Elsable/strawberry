@@ -1,0 +1,17 @@
+
+
+### get resource
+GET {{host}}/api/v1/resource/{{id}}
+
+### create resource
+POST {{host}}/api/v1/resource
+Content-Type: application/json
+
+{
+    "type": "{{type}}",
+	"description": "Resource Description",
+	"location":  { "loc": 1.1, "lat": 2.2 }
+}
+
+### list all resources
+GET {{host}}/api/v1/list

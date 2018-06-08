@@ -7,15 +7,15 @@ import (
 
 // Resource data
 type Resource struct {
-	ID          string    `json:"id"`
-	Type        int       `json:"type"`
+	ID          string   `json:"id"`
+	Type        string       `json:"type"`
 	Description string    `json:"description"`
 	Location    Location  `json:"location"`
 	Timestamp   time.Time `json:"time"`
 }
 
 func (r *Resource) String() string {
-	return fmt.Sprintf("Resource ID=%s Type=%s Description=%s Location=%v CreateAt=%s", r.ID, r.Type, r.Description, r.Location, r.CreateAt)
+	return fmt.Sprintf("Resource ID=%s Type=%s Description=%s Location=%v CreateAt=%s", r.ID, r.Type, r.Description, r.Location, r.Timestamp)
 }
 
 // Location coordinates referenced from the GeoJSON

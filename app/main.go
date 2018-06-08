@@ -29,8 +29,10 @@ func main() {
 		log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds | log.Lshortfile)
 	}
 
-	//engine := getEngine(opts.Engine, opts.BoltDB)
-	service := store.Service{}
+	engine := getEngine(opts.Engine, opts.BoltDB)
+	service := store.Service{
+		Engine: engine,
+	}
 	server := rest.Server{
 		Service: &service,
 		Version: revision,

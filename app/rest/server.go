@@ -67,7 +67,7 @@ func (s Server) postResourceCtrl(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	resourceID, err := s.Service.Create(&res)
+	resourceID, err := s.Service.Create(res)
 	if err != nil {
 		render.Status(r, http.StatusBadRequest)
 		render.JSON(w, r, JSON{"error": err.Error()})

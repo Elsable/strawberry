@@ -1,6 +1,4 @@
-
-
-### get resource
+### get resource by id
 GET {{host}}/api/v1/resource/{{id}}
 
 ### create resource
@@ -8,12 +6,12 @@ POST {{host}}/api/v1/resource
 Content-Type: application/json
 
 {
-    "type": "{{type}}",
+    "type": "Raccoon",
 	"description": "Resource Description",
 	"location":  { "lon": 1.1, "lat": 2.2 }
 }
 
-### list all resources
+### list of all resources
 GET {{host}}/api/v1/list
 
 ###

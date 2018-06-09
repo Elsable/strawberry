@@ -22,7 +22,7 @@ func main() {
 	if _, err := flags.Parse(&opts); err != nil {
 		os.Exit(1)
 	}
-	fmt.Printf("secrets %s\n", revision)
+	fmt.Printf("Strawberry %s\n", revision)
 
 	log.SetFlags(log.Ldate | log.Ltime)
 	if opts.Dbg {

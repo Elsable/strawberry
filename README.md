@@ -8,4 +8,4 @@ Supports sharing, rent and track different kind of resources.
 
 ## Thanks
 
-To @umputun and @radio_t Who inspired me to use Golang.
+To @umputun and @radio_t Who inspired me to Go.

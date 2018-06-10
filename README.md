@@ -1,12 +1,10 @@
 # Strawberry
 
-A service implements shared economy ideas. 
+Sharing economy ideas for learning purposes. 
 
-It would be possible to share, rent and track different kind of resources. 
+Self-hosted backend service using Go and BoltDB.
 
-## Disclaimer
-
-At the first turn the app serves to practice Golang and not production-ready at this point.
+Supports sharing, rent and track different kind of resources. 
 
 ## Thanks
 

@@ -1,10 +1,19 @@
 package store
 
 import (
-	"errors"
 	"log"
 	"sync"
+	"errors"
+	"strconv"
 )
+
+type ErrKeyNotFound struct {
+	ResourceID string
+}
+
+func(err ErrKeyNotFound) Error() string{
+	return "Resource not found for resourceID="+err.ResourceID
+}
 
 // InMemory implements store.Interface with concurrent map
 type InMemory struct {
@@ -39,26 +48,36 @@ func (s *InMemory) Get(resourceID string) (Resource, error) {
 
 	if !ok {
 		log.Printf("[INFO] not found %s", resourceID)
-		return r, errors.New("Resource not found for resourceID=" + resourceID)
+		return r, ErrKeyNotFound{ResourceID:resourceID}
 	}
 
 	return r, nil
 }
 
-// List contains all resources
-func (s *InMemory) List(limit int) (list *[]Resource, err error) {
+// List of resources. Use limit = 0 to get all resources
+func (s *InMemory) List(limit int) (*[]Resource, error) {
 	s.Lock()
 	defer s.Unlock()
 
-	l := make([]Resource, len(s.data))
+	if limit < 0{
+		return nil, errors.New("Limit should be >= 0 but was "+strconv.Itoa(limit));
+	}
+	count := len(s.data)
+	if limit == 0 || limit > count{
+		limit = count
+	}
+	list := make([]Resource, limit)
 
 	i := 0
 	for _, v := range s.data {
-		l[i] = v
+		list[i] = v
 		i++
+		if i == limit{
+			break
+		}
 	}
 
-	return &l, nil
+	return &list, nil
 }
 
 // Delete by key

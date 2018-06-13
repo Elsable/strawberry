@@ -7,6 +7,7 @@ import (
 	"sync"
 )
 
+// ErrKeyNotFound helps to differ missed key from store issues
 type ErrKeyNotFound struct {
 	ResourceID string
 }

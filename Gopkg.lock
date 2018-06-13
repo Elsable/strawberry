@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
+  version = "v1.1.0"
+
+[[projects]]
   name = "github.com/go-chi/chi"
   packages = [
     ".",
@@ -34,9 +40,21 @@
   packages = ["."]
   revision = "7a613570d084fe7506c069d2cd8216d4795bd7e0"
 
+[[projects]]
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+  version = "v1.0.0"
+
+[[projects]]
+  name = "github.com/stretchr/testify"
+  packages = ["assert"]
+  revision = "f35b8ab0b5a2cef36673838d662e249dd9c94686"
+  version = "v1.2.2"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "67169f53390fa190d3e091e3d725ff556e4ca1b4e886cb3935b00a767ccb3395"
+  inputs-digest = "78777e7ead4216fb8da4183e0ea306ad1ef207a33bf09ca65603b799d7f8cb1b"
   solver-name = "gps-cdcl"
   solver-version = 1
